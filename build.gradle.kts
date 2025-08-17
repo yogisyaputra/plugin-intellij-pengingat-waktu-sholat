@@ -27,7 +27,7 @@ tasks {
     patchPluginXml {
         sinceBuild.set("242")
         untilBuild.set("")
-        changeNotes.set("Initial skeleton.")
+        changeNotes.set("Pengingat Sholat.")
     }
     compileKotlin { kotlinOptions.jvmTarget = "17" }
     compileJava {

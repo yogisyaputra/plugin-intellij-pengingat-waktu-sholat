@@ -6,16 +6,18 @@
 
     <description><![CDATA[
     <h2>Pengingat Sholat — Overview</h2>
+    <h3>Pengingat Sholat adalah plugin untuk IntelliJ IDEA (dan IDE JetBrains lain) yang menampilkan jadwal sholat harian dan countdown menuju adzan.
+Cocok buat developer muslim yang sering lupa waktu sholat karena fokus ngoding</h2>
     <ul>
-      <li>Ambil jadwal sholat dari API eksternal (AlAdhan)</li>
-      <li>Pengingat X menit sebelum adzan (multi-offset)</li>
-      <li>Status bar countdown + ikon dinamis</li>
-      <li>Popup detail hari ini (Refresh now, Settings)</li>
-      <li>Tool Window (sidebar) untuk ubah City/Offset tanpa buka Settings</li>
-      <li>City Picker searchable (tampilkan 10 hasil awal)</li>
-      <li>Mode countdown: ke <b>Adzan</b> / ke <b>Reminder</b></li>
+      <li>Ambil jadwal sholat dari API eksternal (MyQuran)</li>
+      <li>Notifikasi pengingat sholat (bisa diatur offset, misalnya 5/10 menit sebelum adzan)</li>
+      <li>Countdown di Status Bar menuju adzan berikutnya / reminder.</li>
+      <li>Tool Window khusus untuk konfigurasi cepat</li>
+      <li>Popup detail jadwal harian saat klik ikon di status bar.</li>
+      <li>Refresh jadwal langsung dari API.</li>
+      <li>Ikon adaptif sesuai tema (light/dark mode).</li>
     </ul>
-    <p>Dokumentasi & issue tracker: (link repo kamu)</p>
+    <p>Dokumentasi & issue tracker: https://github.com/yogisyaputra/plugin-intellij-pengingat-waktu-sholat</p>
   ]]></description>
 
     <change-notes><![CDATA[

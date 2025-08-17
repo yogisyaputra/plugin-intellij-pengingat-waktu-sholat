@@ -34,8 +34,6 @@ Cocok buat developer muslim yang sering lupa waktu sholat karena fokus ngoding �
 ### Popup Notif Pengingat Adzan
 ![popup](src/main/resources/screenshots/popup.png)
 
-### Tool Window Config
-![toolwindow](screenshots/toolwindow.png)
 ## ⚙️ Cara Install
 
 ### 1. Dari Source (dev mode)
