@@ -1,0 +1,72 @@
+<idea-plugin>
+    <id>id.yogi.sholatreminder</id>
+    <name>Pengingat Waktu Sholat</name>
+    <vendor email="yogisyaputra00@gmail.com">Yogi Syaputra</vendor>
+    <version>0.1.0</version>
+
+    <description><![CDATA[
+    <h2>Pengingat Sholat — Overview</h2>
+    <ul>
+      <li>Ambil jadwal sholat dari API eksternal (AlAdhan)</li>
+      <li>Pengingat X menit sebelum adzan (multi-offset)</li>
+      <li>Status bar countdown + ikon dinamis</li>
+      <li>Popup detail hari ini (Refresh now, Settings)</li>
+      <li>Tool Window (sidebar) untuk ubah City/Offset tanpa buka Settings</li>
+      <li>City Picker searchable (tampilkan 10 hasil awal)</li>
+      <li>Mode countdown: ke <b>Adzan</b> / ke <b>Reminder</b></li>
+    </ul>
+    <p>Dokumentasi & issue tracker: (link repo kamu)</p>
+  ]]></description>
+
+    <change-notes><![CDATA[
+    <ul>
+      <li>0.1.0 — versi awal: scheduler + status bar + sidebar + city picker + countdown mode</li>
+    </ul>
+  ]]></change-notes>
+
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="id.ysydev.sholatreminder.AppStartup"/>
+        <notificationGroup id="SholatReminderGroup" displayType="BALLOON" isLogByDefault="true"/>
+        <applicationService serviceImplementation="id.ysydev.sholatreminder.core.PrayerSettingsState"/>
+        <applicationConfigurable instance="id.ysydev.sholatreminder.settings.PrayerSettingsConfigurable"
+                                 id="id.ysydev.sholatreminder.settings"
+                                 displayName="Pengingat Waktu Sholat"/>
+        <statusBarWidgetFactory implementation="id.ysydev.sholatreminder.ui.statusbar.NextPrayerStatusWidgetFactory"
+                                id="NextPrayerCountdown"/>
+        <toolWindow id="Pengingat Waktu Sholat"
+                    anchor="right"
+                    icon="/icons/icon.svg"
+                    factoryClass="id.ysydev.sholatreminder.ui.toolwindow.SholatToolWindowFactory"
+                    canCloseContent="false"/>
+
+
+    </extensions>
+
+    <!-- REGISTER ACTION -->
+    <actions>
+        <action id="id.ysydev.sholatreminder.FetchToday"
+                class="id.ysydev.sholatreminder.ui.actions.FetchTodayAction"
+                text="Fetch Today's Prayer Times"
+                description="Fetch prayer times from API and display">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <action id="id.ysydev.sholatreminder.TestNotif"
+                class="id.ysydev.sholatreminder.ui.actions.TestNotifAction"
+                text="Test Pengingat Waktu Sholat Notification"
+                description="Trigger test notification">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <action id="id.ysydev.sholatreminder.DiagnoseMyQuran"
+                class="id.ysydev.sholatreminder.ui.actions.DiagnoseMyQuranAction"
+                text="Diagnose MyQuran API"
+                description="Test call to MyQuran API">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
